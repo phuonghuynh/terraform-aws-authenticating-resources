@@ -1,0 +1,9 @@
+[
+    "iam:DeleteUserPolicy",
+    "iam:PutUserPolicy",
+    "iam:GetUser",
+    "iam:GetGroup",
+    "iam:AddUserToGroup",
+    "iam:RemoveUserFromGroup",
+    "iam:GetUserPolicy"
+]
