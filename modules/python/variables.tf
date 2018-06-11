@@ -1,12 +1,9 @@
-variable "log_level" {
-}
+variable "module_name" {}
+variable "log_level" {}
+variable "time_to_expire" {}
 
-variable "iam_groups" {
-  type    = "list"
-  default = []
-}
-
-variable "time_to_expire" {
-  default = ""
+variable "resources_type" {}
+variable "resources" {
+  type = "list"
 }
 

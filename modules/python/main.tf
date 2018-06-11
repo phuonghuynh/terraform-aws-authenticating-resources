@@ -4,8 +4,11 @@ resource "template_dir" "this" {
 
   vars {
     log_level  = "${var.log_level}"
-    iam_groups = "${jsonencode(var.iam_groups)}"
+    resources = "${jsonencode(var.resources)}"
+    resources_type = "${var.resources_type}"
+//    iam_groups = "${jsonencode(var.iam_groups)}"
     time_to_expire  = "${var.time_to_expire}"
+    module_name = "${var.module_name}"
   }
 }
 

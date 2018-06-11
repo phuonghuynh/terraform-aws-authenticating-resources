@@ -4,12 +4,15 @@ provider "aws" {
 
 module "dynamic-iam-group" {
   source         = "../../"
-  name           = "example-dynamic-iam-groups"
-  description    = "example usage of terraform-aws-authenticating-iam"
+  name           = "dyna-resource-iam-groups"
+  description    = "example usage of terraform-aws-authenticating-resources"
   time_to_expire = 300
   log_level      = "DEBUG"
 
-    iam_groups = [
+
+  resources_type = "iam_group"
+
+    resources = [
       {
         "group_name" = "test1",
         "user_names" = [
@@ -58,6 +61,7 @@ module "dynamic-iam-group" {
 //    }
 //  ]
 
+  path_part      = "membership"
 }
 
 //resource "aws_iam_policy" "this" {
@@ -76,7 +80,7 @@ module "dynamic-iam-group" {
 //    ]
 //  }
 //}
-//
-//output "dynamic-secgroup-api-invoke-url" {
-//  value = "${module.dynamic-iam-group.invoke_url}"
-//}
+
+output "dynamic-secgroup-api-invoke-url" {
+  value = "${module.dynamic-iam-group.invoke_url}"
+}
